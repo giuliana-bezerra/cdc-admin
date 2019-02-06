@@ -11,4 +11,15 @@ export default class AutorService extends HttpService {
             })
         });
     }
+
+    gravar(autor) {
+        return new Promise((resolve, reject) => {
+            this.post('http://localhost:8080/api/autores', autor)
+            .then(resolve)
+            .catch(err => {
+                console.log(err);
+                reject('Não foi possível salvar o autor.');
+            })
+        });
+    }
 }

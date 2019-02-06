@@ -10,11 +10,13 @@ export default class HttpService {
             .then(res => res.json());
     }
 
-    post(url, body) {
+    post(url, data) {
         return fetch(url, {
+            headers: {'Content-Type': 'application/json'},
             method: 'post',
-            body: JSON.stringify(body)
+            body: JSON.stringify(data)
         })
-        .then(res => this._handleErrors(res));
+        .then(res => this._handleErrors(res))
+        .then(res => res.json());
     }
 }
