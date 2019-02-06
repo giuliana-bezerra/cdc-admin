@@ -2,8 +2,21 @@ import React, { Component } from 'react';
 import './css/pure-min.css';
 import './css/side-menu.css';
 import './css/autores.css';
+import AutorService from './service/AutorService';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {autores: []};
+    this._service = new AutorService();
+  }
+
+  // Chamado depois da primeira renderização
+  componentDidMount() {
+    this._service.listar()
+    .then(autor => this.setState({autores: autor}));
+  }
+
   render() {
     return (
       <div id="layout">
@@ -28,6 +41,7 @@ class App extends Component {
                 <h1>Autor</h1>
                 <h2>Realize o cadastro de autores</h2>
             </div>
+            <br/>
             <div className="content" id="content">
               <div className="pure-form">
                 <form className="pure-form pure-form-aligned">
@@ -58,10 +72,16 @@ class App extends Component {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>Alberto</td>                
-                      <td>alberto.souza@caelum.com.br</td>                
-                    </tr>
+                    {
+                        this.state.autores.map((autor => {
+                          return (
+                            <tr key={autor.id}>
+                              <td>{autor.nome}</td>
+                              <td>{autor.email}</td>
+                            </tr>
+                          );
+                        }))
+                    }
                   </tbody>
                 </table> 
               </div>
