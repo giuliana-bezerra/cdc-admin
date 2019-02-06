@@ -3,12 +3,14 @@ import './css/pure-min.css';
 import './css/side-menu.css';
 import './css/autores.css';
 import AutorService from './service/AutorService';
+import AutorView from './view/AutorView';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {autores: []};
     this._service = new AutorService();
+    this._view = new AutorView();
   }
 
   // Chamado depois da primeira renderização
