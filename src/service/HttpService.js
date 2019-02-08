@@ -1,6 +1,13 @@
 export default class HttpService {
+    constructor() {
+        this._errorMessage = '';
+    }
+
     _handleErrors(res) {
-        if (!res.ok) throw new Error(res.statusText);
+        if (!res.ok) {
+            this._errorMessage = res.json();
+            throw new Error(this._errorMessage);
+        }
         return res;
     }
 
@@ -18,5 +25,9 @@ export default class HttpService {
         })
         .then(res => this._handleErrors(res))
         .then(res => res.json());
+    }
+
+    getErrorMessage() {
+        return this._errorMessage;
     }
 }

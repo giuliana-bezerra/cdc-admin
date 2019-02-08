@@ -5,10 +5,7 @@ export default class AutorService extends HttpService {
         return new Promise((resolve, reject) => {
             this.get('http://localhost:8080/api/autores')
             .then(resolve)
-            .catch(err => {
-                console.log(err);
-                reject('Não foi possível buscar os autores.');
-            })
+            .catch(err => reject('Não foi possível buscar os autores.'));
         });
     }
 
@@ -16,10 +13,7 @@ export default class AutorService extends HttpService {
         return new Promise((resolve, reject) => {
             this.post('http://localhost:8080/api/autores', autor)
             .then(resolve)
-            .catch(err => {
-                console.log(err);
-                reject('Não foi possível salvar o autor.');
-            })
+            .catch(err => reject(this.getErrorMessage()));
         });
     }
 }
