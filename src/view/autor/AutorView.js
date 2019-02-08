@@ -16,8 +16,8 @@ export default class AutorView extends Component {
         return (
             <div id="autorView">
                 <div className="header">
-                    <h1>Autor</h1>
-                    <h2>Realize o cadastro de autores</h2>
+                    <h2>Autor</h2>
+                    <h4>Realize o cadastro de autores</h4>
                 </div>
                 <br />
                 <div className="content" id="content">

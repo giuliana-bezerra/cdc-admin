@@ -18,7 +18,7 @@ export default class InputCustomizado extends Component {
     }
     
     componentDidMount() {
-        PubSub.subscribe('erro', (topico, erro) => {
+        PubSub.subscribe('error', (topico, erro) => {
             if (erro.field === this.props.name)
                 this.setState({msgErro: erro.defaultMessage});
         });

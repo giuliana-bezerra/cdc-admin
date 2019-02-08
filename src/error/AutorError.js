@@ -10,7 +10,7 @@ export default class AutorError extends Error {
     _handle(err) {
         this._error.then(error =>
           error.errors.forEach((erro) => {
-            PubSub.publish('erro', erro);
+            PubSub.publish('error', erro);
           })
         );
     }
