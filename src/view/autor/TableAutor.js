@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 export default class TableAutor extends Component {
     render() {
         return (
-            <div>
+            <div id="tableAutor">
                 <table className="pure-table pure-table-aligned">
                     <thead>
                         <tr>

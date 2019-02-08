@@ -6,6 +6,7 @@ import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import AutorView from './view/autor/AutorView';
 import Home from './view/Home';
+import LivroView from './view/livro/LivroView';
 
 ReactDOM.render(
     (
@@ -13,7 +14,7 @@ ReactDOM.render(
             <App>
                 <Route exact path="/" component={Home}/>
                 <Route path="/autor" component={AutorView}/>
-                <Route path="/livro"/>
+                <Route path="/livro" component={LivroView}/>
             </App>
         </Router>
     ), 

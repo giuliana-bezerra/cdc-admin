@@ -8,10 +8,19 @@ export default class AutorError extends Error {
     }
 
     _handle(err) {
-        this._error.then(error =>
-          error.errors.forEach((erro) => {
-            PubSub.publish('error', erro);
-          })
-        );
+        if (this._error) {
+            this._error.then(error => {
+                if (error.errors) {
+                    error.errors.forEach((erro) => {
+                        console.log(erro);
+                        PubSub.publish('error', erro);
+                    });
+                }
+                else {
+                    console.log(error);
+                    PubSub.publish('error', error); 
+                }
+            });
+        }
     }
 }
