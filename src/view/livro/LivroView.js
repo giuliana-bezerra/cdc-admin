@@ -16,8 +16,8 @@ export default class LivroView extends Component {
         return (
             <div id="livroView">
                 <div className="header">
-                    <h2>Livro</h2>
-                    <h4>Realize o cadastro de livros</h4>
+                    <h5 className="center">Livro</h5>
+                    <h6 className="center">Realize o cadastro de livros</h6>
                 </div>
                 <br />
                 <div className="content" id="content">

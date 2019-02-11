@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PubSub from 'pubsub-js';
+import { Input } from 'react-materialize';
 
 export default class InputCustomizado extends Component {
     constructor() {
@@ -10,8 +11,7 @@ export default class InputCustomizado extends Component {
     render() {
         return (
             <div className="pure-control-group">
-                <label htmlFor={this.props.id}>{this.props.label}</label>
-                <input {...this.props}/>
+                <Input {...this.props} s={12}/>
                 <span className="error">{this.state.msgErro}</span>
             </div>
         );

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import AutorService from '../service/AutorService';
 import PubSub from 'pubsub-js';
+import { Input } from 'react-materialize';
 
 export default class SelectCustomizado extends Component {
     constructor() {
@@ -12,8 +13,7 @@ export default class SelectCustomizado extends Component {
     render() {
         return (
             <div className="pure-control-group">
-                <label htmlFor={this.props.id}>{this.props.label}</label>
-                <select id={this.props.id} onChange={this.props.onChange} value={this.props.value}>
+                <Input {...this.props} type="select">
                     {
                         this.state.autores.map(autor => 
                             <option key={autor.id} value={autor.id}>
@@ -21,7 +21,7 @@ export default class SelectCustomizado extends Component {
                             </option>
                         )
                     }
-                </select>
+                </Input>
                 <span className="error">{this.state.msgErro}</span>
             </div>
         );  

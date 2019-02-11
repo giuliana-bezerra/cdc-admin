@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import { Table } from 'react-materialize';
 
 export default class TableAutor extends Component {
     render() {
         return (
             <div id="tableAutor">
-                <table className="pure-table pure-table-aligned">
+                <br/>
+                <Table striped bordered responsive>
                     <thead>
                         <tr>
                             <th>Nome</th>
@@ -23,7 +25,7 @@ export default class TableAutor extends Component {
                             }))
                         }
                     </tbody>
-                </table>
+                </Table>
             </div>
         );
     }
