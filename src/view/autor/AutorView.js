@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../../css/form.css';
 import FormAutor from './FormAutor.js';
 import TableAutor from './TableAutor.js';
 import AutorService from '../../service/AutorService';
