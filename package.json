@@ -16,7 +16,8 @@
     "react-scripts": "2.1.3",
     "react-transition-group": "^2.5.3",
     "styled-components": "^4.1.3",
-    "react-materialize": "^2.6.0"
+    "react-materialize": "^2.6.0",
+    "react-router-dom": "^4.4.0-beta.6"
   },
   "scripts": {
     "prestart": "cd server && npm start &",
@@ -33,8 +34,5 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ],
-  "devDependencies": {
-    "react-router-dom": "^4.4.0-beta.6"
-  }
+  ]
 }
