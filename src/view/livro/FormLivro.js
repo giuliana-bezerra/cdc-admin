@@ -20,7 +20,7 @@ export default class FormLivro extends Component {
 
     render() {
         return (
-            <Fragment id="formLivro">
+            <Fragment key="formLivro">
                 <Alert key="msgAutor" variant='success' show={this.state.show} onClose={this._handleHide}  dismissible>
                     Livro cadastrado com sucesso!
                 </Alert>
